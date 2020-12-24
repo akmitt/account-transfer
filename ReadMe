@@ -1,0 +1,37 @@
+Unzip the file
+Import the file in eclipse as Maven Project or go to parent directory transfer-service
+mvn clean install
+jar is created in the target folder
+start java -jar transfer-service-0.0.1-SNAPSHOT.jar from cmd or ApplicationStartUp in eclipse as java application 
+
+Swagger URL To  check all api
+
+http://localhost:8080/swagger-ui.html
+
+Under Bank Controller methods exposed
+
+/account- POST add a new account
+Sample Request 1
+{
+  "accountHolderName": "Akhil MITTAL",
+  "balance": 10000
+}
+
+Account is generated in response
+
+
+/account- PUT   to transfer money from debit account to credit account
+ 
+ Sample Request
+{
+  "creditAccount": 1000,
+  "debitAccount": 1001,
+  "transferAmount": 190
+}
+
+/account/{id}- GET   to get account balance - This method returns Etag which is to be passed  as headers If-Match for transfer api
+ 
+ 
+In memory database is used and details are mentioned in application.properties file
+
+There are Junit test cases in test folder
